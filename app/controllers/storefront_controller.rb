@@ -4,6 +4,21 @@ class StorefrontController < ApplicationController
   end
 
   def items_by_category
+  #   @category = Category.find(params[:cat_id])
+  #   products = Product.all
+  #   @products_by_cat = []
+
+  #   @products.each do |product|
+  #     if product.category.id == @category.id
+  #     @products.push(product)
+  #     end
+
+  #   end
+  # end
+
+  @products = Product.where(category_id: params[:cat_id])
+  @category = Category.find(params[:cat_id])
+
   end
 
   def items_by_brand

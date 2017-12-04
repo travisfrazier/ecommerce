@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'categorical' => 'storefron#items_by_category'
+  devise_for :users
+  get 'categorical' => 'storefront#items_by_category'
 
   get 'branding' => 'storefront#items_by_brand'
 
